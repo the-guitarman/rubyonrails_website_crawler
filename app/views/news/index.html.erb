@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>News</h1>
+
+<p><%= link_to 'Homepage', root_path %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Published at</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td><%= t(news.published_at) %></td>
+        <td><%= news.title %></td>
+        <td><%= news.body %></td>
+        <td><%= link_to 'Show', news %></td>
+        <td><%= link_to 'Edit', edit_news_path(news) %></td>
+        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
+<br>
+
+<%= link_to 'New News', new_news_path %>

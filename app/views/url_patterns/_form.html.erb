@@ -1,0 +1,27 @@
+<%= form_with(model: url_pattern, local: true) do |form| %>
+  <% if url_pattern.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(url_pattern.errors.count, "error") %> prohibited this url_pattern from being saved:</h2>
+
+      <ul>
+        <% url_pattern.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_area :url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group form-check">
+    <%= form.check_box :active, class: 'form-check-input' %>
+    <%= form.label :active, class: 'form-check-label' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

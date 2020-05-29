@@ -1,0 +1,2 @@
+module UserAgentsHelper
+end

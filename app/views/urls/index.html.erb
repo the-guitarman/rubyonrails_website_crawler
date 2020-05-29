@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Urls</h1>
+
+<p><%= link_to 'Homepage', root_path %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.url %></td>
+        <td><%= link_to 'Show', url %></td>
+        <td><%= link_to 'Edit', edit_url_path(url) %></td>
+        <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
+<br>
+
+<%= link_to 'New Url', new_url_path %>

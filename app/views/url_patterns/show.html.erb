@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @url_pattern.url %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @url_pattern.active %>
+</p>
+
+<%= link_to 'Edit', edit_url_pattern_path(@url_pattern) %> |
+<%= link_to 'Back', url_patterns_path %>

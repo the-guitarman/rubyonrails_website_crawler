@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: https://www.example.com/pattern1/%Y-%m
+  active: false
+
+two:
+  url: https://www.example.com/%Y-%m-%d/pattern2
+  active: true

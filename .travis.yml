@@ -1,0 +1,40 @@
+#addons:
+#  postgresql: 9.6
+#  code_climate:
+#    repo_token: <Get from Code Climate>
+#after_success:
+#  - bundle exec codeclimate-test-reporter
+#before_script:
+#  - cp config/database.yml.travis config/database.yml
+#  - psql -c 'create database travis_ci_test;' -U postgres
+#dist: trusty
+#rvm:
+#  - 2.4.1
+#script:
+#  - bundle exec rails db:migrate RAILS_ENV=test
+#  - bundle exec rspec
+#services:
+#  - redis-server
+
+language: ruby
+#bundler_args: --without production
+bundler_args: --binstubs
+#install: bundle install --jobs=3 --retry=3
+before_install:
+  - gem install bundler
+cache:
+  bundler: true
+  directories:
+    - node_modules
+  yarn: true
+install:
+  - bundle install --jobs 3 --retry 3
+  - nvm install 13
+  - node -v
+  - npm i -g yarn
+  - yarn
+script:
+  - yarn lint
+  - yarn test
+  - ./bin/rails test
+  - ./bin/rails spec

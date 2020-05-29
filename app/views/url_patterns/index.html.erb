@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Url Patterns</h1>
+
+<p><%= link_to 'Homepage', root_path %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @url_patterns.each do |url_pattern| %>
+      <tr>
+        <td><%= url_pattern.url %></td>
+        <td><%= url_pattern.active %></td>
+        <td><%= link_to 'Show', url_pattern %></td>
+        <td><%= link_to 'Edit', edit_url_pattern_path(url_pattern) %></td>
+        <td><%= link_to 'Destroy', url_pattern, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
+<br>
+
+<%= link_to 'New Url Pattern', new_url_pattern_path %>

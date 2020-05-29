@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+
+<p><%= link_to 'Homepage', root_path %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Crawler config</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.url %></td>
+        <td><%= page.crawler_config %></td>
+        <td><%= link_to 'Show', page %></td>
+        <td><%= link_to 'Edit', edit_page_path(page) %></td>
+        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
+<br>
+
+<%= link_to 'New Page', new_page_path %>
