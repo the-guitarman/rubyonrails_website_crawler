@@ -26,7 +26,6 @@ class UrlCrawler
       .map { |entry| extract_news_entry_data(entry) }
       .reverse
       .each do |entry_attrs| 
-        puts entry_attrs
         news = News.create_or_find_by_attrs(entry_attrs, :title, :published_at)
         if news.new_record? and not news.errors.empty?
           Rails.logger.error("#{self.class.name}: " + news.errors.inspect)
