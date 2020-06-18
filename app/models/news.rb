@@ -1,6 +1,6 @@
 class News < ApplicationRecord
   validates :title, presence: true
-  #validates :title, uniqueness: { scope: :published_at }
+  validates :title, uniqueness: { scope: :published_at }
   validates :url, presence: true
   validates :body, presence: true
   validates :published_at, presence: true
