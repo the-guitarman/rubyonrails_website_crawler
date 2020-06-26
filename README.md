@@ -12,7 +12,7 @@ At the moment it checks to tweet at [Twitter/claussnitz_de](https://twitter.com/
 - Posts from [claussnitz.de/index.php/aktuelles-2](https://claussnitz.de/index.php/aktuelles-2)
 - New PDF files under [claussnitz.de/index.php/amtsblatt](https://claussnitz.de/index.php/amtsblatt)
 
-There are no information added or removed. It reads und posts 1:1 from the urls behind it.
+There are no information added or removed. It reads and tweets 1:1 from the urls behind it.
 
 ## License
 
