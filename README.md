@@ -6,7 +6,7 @@ This is an after work project, which runs at my raspberry pi at home.
 
 The app checks some urls for existence and looks for new posts at the website of my village to tweet it. 
 
-__Intension:__ I started the project during the corona pandemic. Hopefully it will help other residents and I to be informed as soon as the municipality publishes new rules, recommendations and information.
+__Intension:__ I started the project during the corona pandemic. Hopefully it will help other residents and me to be informed as soon as the municipality publishes new rules, recommendations and information.
 
 At the moment it checks to tweet at [Twitter/claussnitz_de](https://twitter.com/claussnitz): 
 - Posts from [claussnitz.de/index.php/aktuelles-2](https://claussnitz.de/index.php/aktuelles-2)
@@ -18,11 +18,11 @@ There are no information added or removed. It reads and tweets 1:1 from the urls
 
 MIT
 
+### Note
+
+Please give improvements back.
+
 ## TODOs:
 - [ ] rake tasks to zip db dump
 - [ ] better hash tags
 - [ ] test tweet order
-
-## Note
-
-Please give improvements back.
